@@ -20,7 +20,7 @@ const ExperienceCard = ({experience}: Props) => {
         width: `${width}px`,   // Set the width dynamically
       };
     return (
-    <article className= {`flex flex-col rounded-lg  flex-shrink-0 items-center space-y-7 sm:space-y-3 mt-[20px] snap-center snap-mandatory hover:opacity-100 opacity-40 cursor-pointer duration-200 overflow-y-scroll scrollbar scrollbar-corner-yellow-400 overflow-x-hidden  lg:mx-0`} style={cardStyle}>
+    <article className= {`flex flex-col rounded-lg  flex-shrink-0 items-center space-y-7 sm:space-y-3 mt-[20px] snap-center snap-mandatory hover:opacity-100 opacity-40 cursor-pointer duration-200 overflow-x-hidden  lg:mx-0`} style={cardStyle}>
         <motion.img 
         initial={{
             y: -70,
