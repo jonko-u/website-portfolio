@@ -20,7 +20,7 @@ const ExperienceCard = ({experience}: Props) => {
         width: `${width}px`,   // Set the width dynamically
       };
     return (
-    <article className= {`flex flex-col rounded-lg px-6 flex-shrink-0 items-center space-y-7 mt-[20px] snap-center snap-mandatory hover:opacity-100 opacity-40 cursor-pointer duration-200 overflow-y-scroll overflow-x-hidden mx-[-25px]`} style={cardStyle}>
+    <article className= {`flex flex-col rounded-lg  flex-shrink-0 items-center space-y-7 sm:space-y-3 mt-[20px] snap-center snap-mandatory hover:opacity-100 opacity-40 cursor-pointer duration-200 overflow-y-scroll scrollbar scrollbar-corner-yellow-400 overflow-x-hidden  lg:mx-0`} style={cardStyle}>
         <motion.img 
         initial={{
             y: -70,
@@ -34,21 +34,23 @@ const ExperienceCard = ({experience}: Props) => {
         className={`pt-[70px]`}
         style={imgStyle}
         src={urlFor(experience.companyImage).url()} alt="" />
-        <div className='px-5 md:px-10 '>
+        <div className='px-1 w-full md:px-10 lg:px-0  lg:w-[1000px] flex flex-col items-center lg:flex lg:flex-col lg:items-center'>
             <h4 className='text-2xl sm:text-4xl font-light text-center'>{experience.jobTitle}</h4>
-            <p className='font-bold text-2xl mt-1 sm:px-[400px]'>{experience.company}</p>
-            <div className='flex space-x-2 my-2 sm:px-[400px]'>
+            <p className='font-bold text-2xl mt-1 md:px-0 lg:px-0'>{experience.company}</p>
+            <div className='flex h-[40px] space-x-2 my-2 md:px-0 lg:px-0'>
                 {/* Tecnology used */}
                 {experience.technologies.map((technology)=>(
-                    <img key={technology._id} src={urlFor(technology.companyImage).url()} alt="here" className='w-[40px] h-[50px] ml-[30px] sm:ml-0'/>
+                    <img key={technology._id} src={urlFor(technology.companyImage).url()} alt="here" className='w-[40px] h-full  sm:ml-0'/>
                 ))}
             </div>
-            <p className='uppercase py-5 text-gray-300 sm:px-[400px]'>{new Date(experience?.dateStarted).toDateString()} - {""}{experience?.isCurrentlyWorkingHere ? "Present": new Date(experience?.dateEnded).toDateString()}</p>
-            <ul className='list-disc text-justify space-y-4 sm:px-[400px] text-lg  overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A] '>
-                {experience.points.map((point,i) => (
-                    <li key={i}>{point}</li>
-                ))}            
-            </ul>
+            <p className='uppercase py-5 text-gray-300 sm:px-0'>{new Date(experience?.dateStarted).toDateString()} - {""}{experience?.isCurrentlyWorkingHere ? "Present": new Date(experience?.dateEnded).toDateString()}</p>
+            <div className='w-full h-full'>
+                <ul className='list-disc flex flex-col items-start text-justify justify-center mx-6'>
+                    {experience.points.map((point,i) => (
+                        <li key={i} className='ml-0'>{point}</li>
+                    ))}            
+                </ul>
+            </div>
         </div>
     </article>
   )

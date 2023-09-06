@@ -31,28 +31,32 @@ export default function Home(){
         <Hero pageInfo = {pageInfo?.pageInfo}/>
       </section>
       {/* About */}
-      <section id="about" className='snap-center'>
+      <section id="about" className='snap-center h-screen'>
         <About pageInfo ={pageInfo?.pageInfo} />
       </section>
-      <section id="experience" className='snap-center '>
+      <section id="experience" className='snap-center h-screen'>
         <WorkExperience />
       </section>
-      <section id="skills" className='snap-start'>
+      <section id="skills" className='snap-start h-full'>
         <Skills/>
       </section>
-      <section id="projects" className='snap-start'>
+      <section id="projects" className='snap-start h-full'>
         <Projects />
       </section>
-      <section id="contactme" className='snap-start'>
+      <section id="contactme" className='snap-start h-full'>
         <ContactMe pageInfo={pageInfo?.pageInfo}/>
       </section>
-      <Link href='#hero'>
-        <footer className='sticky bottom-28 ms-6 sm:ms-0 sm:bottom-5 w-full cursor-pointer'>
+      
+        <footer className='sticky bottom-28 ms-2 sm:ms-0 sm:bottom-2'>
           <div className='flex items-center justify-start sm:justify-center'>
-            <img className='h-[50px] w-[50px] rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src={urlFor(pageInfo?.pageInfo.heroImage).url()} alt="" />
+            <div className='h-[50px] w-[50px]'>
+              <Link href="#hero">
+                <img className='w-full h-full rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src={urlFor(pageInfo?.pageInfo.heroImage).url()} alt="" />
+              </Link>            
+            </div>
           </div>
         </footer>
-      </Link>
+      
       </div>
     </RootLayout>
   );
