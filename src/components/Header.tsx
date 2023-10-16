@@ -1,16 +1,20 @@
 "use client";
+import usePDF from "@/hooks/usePDF";
+import { getUrlFromId, urlFor } from "@/sanity";
 import FetchSocials from "@/server-components/FetchSocials";
+import { PDF, pageInfoPDF } from "@/typing";
 import { motion } from "framer-motion";
 import Link from 'next/dist/client/link';
 import { SocialIcon } from "react-social-icons";
 
 
 export default function Header() {
- 
+  
+
   return (
     <header className="sticky top-[15px] flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <FetchSocials/>
-        <motion.div className="flex flex-row items-center text-gray-300 cursor-pointer"
+      <motion.div className="flex flex-row items-center text-gray-300 cursor-pointer"
         initial = {
           {x: 500,
           opacity: 0,

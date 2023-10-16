@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 192.168.1.129",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -28,6 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
+    "react-loading": "^2.0.3",
     "react-query": "^3.39.3",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",

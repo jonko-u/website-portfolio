@@ -32,3 +32,6 @@ body {
   background: rgb(var(--background-end-rgb))
     
 }
+.hackthebox {
+  background-image: url("https://www.hackthebox.com/images/landingv3/favicon.png");
+}

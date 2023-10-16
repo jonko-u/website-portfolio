@@ -12,6 +12,13 @@ interface Image {
         _type: "reference";
     }
 }
+interface PDF {
+    __type: "file";
+    asset: {
+        _ref: string;
+        _type: "reference";
+    }
+}
 export interface PageInfo extends SanityBody{
     _type: "pageInfo";
     address: string;
@@ -58,4 +65,9 @@ export interface Social extends SanityBody {
     _type: "social";
     title: string;
     url: string;
+}
+export interface pageInfoPDF extends SanityBody {
+    _type: "pdf";
+    title: PDF;
+    companyImage: Image;
 }

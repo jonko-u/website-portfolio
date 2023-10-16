@@ -13,13 +13,14 @@ import Link from 'next/dist/client/link';
 import usePageInfo from '../hooks/usePageInfo'
 import RootLayout from './layout';
 import { urlFor } from '@/sanity';
+import Loading from '../components/Loading';
 
 export default function Home(){
 
   
-  const {data: pageInfo} = usePageInfo();
-  if(!pageInfo){
-    return (<RootLayout><div>Loading</div></RootLayout>)
+  const {data: pageInfo, isLoading} = usePageInfo();
+  if(isLoading){
+    return (<Loading/>)
   }
   return (
     <RootLayout>
