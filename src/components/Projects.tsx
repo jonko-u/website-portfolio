@@ -37,20 +37,20 @@ const Projects = () => {
                 {projects.map((project, i) => (
                     // eslint-disable-next-line react/jsx-key
                     <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
-                        <Link href={project?.linkToBuild}>
-                            <motion.img 
-                            initial={{
-                                y: -200,
-                                opacity:0,
-                            }}
-                            whileInView={{
-                                y: 0,
-                                opacity:1,
-                            }}
-                            transition={{duration:2}}
-                            src={urlFor(project?.image).url()}
-                            className='w-[100px] sm:w-[250px] md:w-[280px] lg:w-[300px] md:mt-28 flex-shrink-0 snap-center flex flex-col space-y-1 items-center justify-center sm:px-20 '/>  
-                        </Link>                 
+                        
+                        <motion.img 
+                        initial={{
+                            y: -200,
+                            opacity:0,
+                        }}
+                        whileInView={{
+                            y: 0,
+                            opacity:1,
+                        }}
+                        transition={{duration:2}}
+                        src={urlFor(project?.image).url()}
+                        className='w-[100px] sm:w-[250px] md:w-[280px] lg:w-[300px] md:mt-28 flex-shrink-0 snap-center flex flex-col space-y-1 items-center justify-center sm:px-20 '/>  
+                        <a href={project?.linkToBuild}>Click here to go to the Source Project.</a>
                     <div className='space-y-2 mt-[-40px] px-0 sm:mt-[-40px] md:mt-[-40px] lg:mt-[-40px] md:px-10 max-w-6xl'>
                         
                         <h4 className='text-4xl font-semibold text-center'>
