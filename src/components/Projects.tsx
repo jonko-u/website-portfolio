@@ -50,7 +50,7 @@ const Projects = () => {
                         transition={{duration:2}}
                         src={urlFor(project?.image).url()}
                         className='w-[100px] sm:w-[250px] md:w-[280px] lg:w-[300px] md:mt-28 flex-shrink-0 snap-center flex flex-col space-y-1 items-center justify-center sm:px-20 '/>  
-                        <a href={project?.linkToBuild}>Click here to go to the Source Project.</a>
+                        <a className='text-xs' href={project?.linkToBuild}>Source Project</a>
                     <div className='space-y-2 mt-[-40px] px-0 sm:mt-[-40px] md:mt-[-40px] lg:mt-[-40px] md:px-10 max-w-6xl'>
                         
                         <h4 className='text-4xl font-semibold text-center'>
